@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS ENTITY="StrutsProcess">
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#listaCursos"
+  NAME="action1" PATH="/listaCursos" SHAPE="240,145,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/paginas/listadoCurso.jsp" TARGET="page1"
+   TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#toMenu" NAME="action2"
+  PATH="/toMenu" SHAPE="32,129,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="correcto"
+   NAME="forward0" PATH="/paginas/home.jsp" TARGET="page26"
+   TITLE="correcto" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#login" NAME="action3"
+  PATH="/login" SHAPE="32,241,0,0" TITLE="loginForm" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput"
+   ID="loginFallado" NAME="forward0" PATH="/paginas/login.jsp"
+   TARGET="page10" TITLE="loginFallado" TYPE="forward"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput"
+   ID="loginCorrecto" NAME="forward1" PATH="/paginas/home.jsp"
+   TARGET="page26" TITLE="loginCorrecto" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#verificaEvaluacion"
+  NAME="action4" PATH="/verificaEvaluacion" SHAPE="32,497,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="ERROR"
+   NAME="forward0" PATH="/paginas/errroEvaluacion.jsp" TARGET="page4"
+   TITLE="ERROR" TYPE="forward"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="default"
+   NAME="forward1" PATH="/paginas/exampleresponse.jsp" TARGET="page5"
+   TITLE="default" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#listaEvaluaciones"
+  NAME="action5" PATH="/listaEvaluaciones" SHAPE="32,753,0,0"
+  TITLE="estadoForm" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/listaEvaluaciones.do?accion2=listar"
+   TARGET="action5" TITLE="success" TYPE="forward"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="editar"
+   NAME="forward1" PATH="/paginas/edicionEstado.jsp" TARGET="page14"
+   TITLE="editar" TYPE="forward"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="cancel"
+   NAME="forward2" PATH="/listaEvaluaciones.do?accion2=listar"
+   TARGET="action5" TITLE="cancel" TYPE="forward"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="failure"
+   NAME="forward3" PATH="/listaEvaluaciones.do?accion=view"
+   TARGET="action5" TITLE="failure" TYPE="forward"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="listar"
+   NAME="forward4" PATH="/paginas/listadoEvaluaciones.jsp"
+   TARGET="page6" TITLE="listar" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#logOff" NAME="action6"
+  PATH="/logOff" SHAPE="32,385,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="correcto"
+   NAME="forward0" PATH="/Welcome.jsp" TARGET="page3" TITLE="correcto" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#registroAdmin"
+  NAME="action7" PATH="/registroAdmin" SHAPE="32,865,0,0"
+  TITLE="administradorForm" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/paginasAdministrador/reporteRegistroAdmin.jsp"
+   TARGET="page13" TITLE="success" TYPE="forward"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="fallo"
+   NAME="forward1" PATH="/paginasAdministrador/NuevoAdministrador.jsp"
+   TARGET="page0" TITLE="fallo" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page1"
+  PATH="/paginas/listadoCurso.jsp" SHAPE="448,130,0,0" SUBTYPE="jsp"
+  TITLE="listadoCurso.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page4"
+  PATH="/paginas/errroEvaluacion.jsp" SHAPE="256,514,0,0" SUBTYPE="jsp"
+  TITLE="errroEvaluacion.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page5"
+  PATH="/paginas/exampleresponse.jsp" SHAPE="256,658,0,0" SUBTYPE="jsp"
+  TITLE="exampleresponse.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page6"
+  PATH="/paginas/listadoEvaluaciones.jsp" SHAPE="240,770,0,0"
+  SUBTYPE="jsp" TITLE="listadoEvaluaciones.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#listarDocentes"
+  NAME="action8" PATH="/listarDocentes" SHAPE="32,1377,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="aceptar"
+   NAME="forward0" PATH="/paginasAdministrador/ListadoDocentes.jsp"
+   TARGET="page12" TITLE="aceptar" TYPE="forward"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="cancelar"
+   NAME="forward1" PATH="/paginas/home.jsp" TARGET="page26"
+   TITLE="cancelar" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#migrarDocentes"
+  NAME="action9" PATH="/migrarDocentes" SHAPE="32,1489,0,0"
+  TITLE="listadoForm" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="registrar"
+   NAME="forward0"
+   PATH="/paginasAdministrador/ReporteDocentesRegistrados.jsp"
+   TARGET="page11" TITLE="registrar" TYPE="forward"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="cancelar"
+   NAME="forward1" PATH="/paginas/home.jsp" TARGET="page26"
+   TITLE="cancelar" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page11"
+  PATH="/paginasAdministrador/ReporteDocentesRegistrados.jsp"
+  SHAPE="256,1506,0,0" SUBTYPE="jsp"
+  TITLE="ReporteDocentesRegistrados.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page12"
+  PATH="/paginasAdministrador/ListadoDocentes.jsp" SHAPE="448,1377,0,0"
+  SUBTYPE="jsp" TITLE="ListadoDocentes.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem"
+  ID="#listarDocentesNoRegistrados" NAME="action13"
+  PATH="/listarDocentesNoRegistrados" SHAPE="32,1873,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/paginasAdministrador/ListadoDocentes.jsp"
+   TARGET="page12" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page13"
+  PATH="/paginasAdministrador/reporteRegistroAdmin.jsp"
+  SHAPE="240,977,0,0" SUBTYPE="jsp" TITLE="reporteRegistroAdmin.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#consultaUsuarios"
+  NAME="action10" PATH="/consultaUsuarios" SHAPE="32,1505,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/paginasAdministrador/consultaUsuarios.jsp"
+   TARGET="page7" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page7"
+  PATH="/paginasAdministrador/consultaUsuarios.jsp" SHAPE="240,1617,0,0"
+  SUBTYPE="jsp" TITLE="consultaUsuarios.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#usuarioAction"
+  NAME="action12" PATH="/usuarioAction" SHAPE="32,1905,0,0"
+  TITLE="usuarioForm" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="verUsuario"
+   NAME="forward0" PATH="/paginasAdministrador/userPage.jsp"
+   TARGET="page9" TITLE="verUsuario" TYPE="forward"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="update"
+   NAME="forward1" PATH="/consultaUsuarios.do" TARGET="action10"
+   TITLE="update" TYPE="forward"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="cancel"
+   NAME="forward2" PATH="/consultaUsuarios.do" TARGET="action10"
+   TITLE="cancel" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page9"
+  PATH="/paginasAdministrador/userPage.jsp" SHAPE="240,2017,0,0"
+  SUBTYPE="jsp" TITLE="userPage.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#listaCursosParametros"
+  NAME="action11" PATH="/listaCursosParametros" SHAPE="32,2369,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0"
+   PATH="/paginasAdministrador/listadoCursoParametros.jsp"
+   TARGET="page27" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page3"
+  PATH="/Welcome.jsp" SHAPE="448,497,0,0" SUBTYPE="jsp"
+  TITLE="Welcome.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#parametrosAction"
+  NAME="action14" PATH="/parametrosAction" SHAPE="80,2257,0,0"
+  TITLE="cursoDocenteForm" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput"
+   ID="verParametros" NAME="forward1"
+   PATH="/paginasAdministrador/parametrosCurso.jsp" TARGET="page25"
+   TITLE="verParametros" TYPE="forward"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="addPrueba"
+   NAME="forward5" PATH="/tipoPruebaCursoAction.do" TARGET="action16"
+   TITLE="addPrueba" TYPE="forward"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput"
+   ID="aceptarParam" NAME="forward8" PATH="/listaCursosParametros.do"
+   TARGET="action11" TITLE="aceptarParam" TYPE="forward"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput"
+   ID="aceptarDefParam" NAME="forward2" PATH="/paginas/home.jsp"
+   TARGET="page26" TITLE="aceptarDefParam" TYPE="forward"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput"
+   ID="cancelDefParam" NAME="forward3" PATH="/listaCursosParametros.do"
+   TARGET="action11" TITLE="cancelDefParam" TYPE="forward"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput"
+   ID="confirmDefParam" NAME="forward4"
+   PATH="/paginasAdministrador/confirmarDefinirParam.jsp" TARGET="page8"
+   TITLE="confirmDefParam" TYPE="forward"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput"
+   ID="toVerParametros" NAME="forward7"
+   PATH="/parametrosAction.do?action=verParametros" TARGET="action14"
+   TITLE="toVerParametros" TYPE="forward"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput"
+   ID="editarDocente" NAME="forward0"
+   PATH="/paginasAdministrador/parametrosCurso.jsp" TARGET="page25"
+   TITLE="editarDocente" TYPE="forward"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput"
+   ID="confirmDefParamCurso" NAME="forward6"
+   PATH="/paginas/confirmarDefinirParam.jsp" TARGET="page17"
+   TITLE="confirmDefParamCurso" TYPE="forward"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput"
+   ID="aceptarParamCurso" NAME="forward9"
+   PATH="/listaCursosParametrosDocente.do" TARGET="action33"
+   TITLE="aceptarParamCurso" TYPE="forward"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="deleteCurso"
+   NAME="forward10" PATH="/listaCursosParametros.do" TARGET="action11"
+   TITLE="deleteCurso" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#tipoPruebaCursoAction"
+  NAME="action16" PATH="/tipoPruebaCursoAction" SHAPE="32,2961,0,0"
+  TITLE="tipoPruebaForm" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="addPrueba"
+   NAME="forward0" PATH="/paginasAdministrador/tipoPruebaCurso.jsp"
+   TARGET="page28" TITLE="addPrueba" TYPE="forward"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput"
+   ID="editarPrueba" NAME="forward1"
+   PATH="/paginasAdministrador/tipoPruebaCurso.jsp" TARGET="page28"
+   TITLE="editarPrueba" TYPE="forward"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward2" PATH="/parametrosAction.do?action=verParametros"
+   TARGET="action14" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#nota" NAME="action0"
+  PATH="/nota" SHAPE="288,1009,0,0" TITLE="notaForm" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="failed"
+   NAME="forward0" PATH="/paginas/listadoEvaluaciones.jsp"
+   TARGET="page6" TITLE="failed" TYPE="forward"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="new"
+   NAME="forward1" PATH="/paginas/listadoNotas.jsp" TARGET="page21"
+   TITLE="new" TYPE="forward"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward2" PATH="/listaEvaluaciones.do?accion2=listar"
+   TARGET="action5" TITLE="success" TYPE="forward"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="cancel"
+   NAME="forward3" PATH="/listaEvaluaciones.do?accion2=listar"
+   TARGET="action5" TITLE="cancel" TYPE="forward"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="print"
+   NAME="forward4" PATH="/paginas/listadoNotasPrinter.jsp"
+   TARGET="page34" TITLE="print" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page21"
+  PATH="/paginas/listadoNotas.jsp" SHAPE="64,1202,0,0" SUBTYPE="jsp"
+  TITLE="listadoNotas.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page0"
+  PATH="/paginasAdministrador/NuevoAdministrador.jsp"
+  SHAPE="240,1089,0,0" SUBTYPE="jsp" TITLE="NuevoAdministrador.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#registrarDocentes"
+  NAME="action19" PATH="/registrarDocentes" SHAPE="352,1585,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="migrar"
+   NAME="forward0" PATH="/paginasAdministrador/confirmarMigracion.jsp"
+   TARGET="page24" TITLE="migrar" TYPE="forward"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="registrar"
+   NAME="forward1" PATH="/listarDocentesNoRegistrados.do"
+   TARGET="action13" TITLE="registrar" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page24"
+  PATH="/paginasAdministrador/confirmarMigracion.jsp"
+  SHAPE="768,1585,0,0" SUBTYPE="jsp" TITLE="confirmarMigracion.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#cambiarContrasenia"
+  NAME="action18" PATH="/cambiarContrasenia" SHAPE="256,257,0,0"
+  TITLE="cambiarContraseniaForm" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="incorrecto"
+   NAME="forward0" PATH="/paginas/cambiarPassword.jsp" TARGET="page22"
+   TITLE="incorrecto" TYPE="forward"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="correcto"
+   NAME="forward1" PATH="/paginas/home.jsp" TARGET="page26"
+   TITLE="correcto" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#toLogin" NAME="action20"
+  PATH="/toLogin" SHAPE="32,641,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="correcto"
+   NAME="forward0" PATH="/paginas/login.jsp" TARGET="page10"
+   TITLE="correcto" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page10"
+  PATH="/paginas/login.jsp" SHAPE="240,353,0,0" SUBTYPE="jsp"
+  TITLE="login.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page14"
+  PATH="/paginas/edicionEstado.jsp" SHAPE="240,865,0,0" SUBTYPE="jsp"
+  TITLE="edicionEstado.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page22"
+  PATH="/paginas/cambiarPassword.jsp" SHAPE="528,386,0,0" SUBTYPE="jsp"
+  TITLE="cambiarPassword.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#iniciarPeriodo"
+  NAME="action21" PATH="/iniciarPeriodo" SHAPE="64,1665,0,0"
+  TITLE="iniciarPeriodoForm" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="correcto"
+   NAME="forward0" PATH="/paginas/home.jsp" TARGET="page26"
+   TITLE="correcto" TYPE="forward"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="incorrecto"
+   NAME="forward1" PATH="/paginasAdministrador/iniciarPeriodo.jsp"
+   TARGET="page15" TITLE="incorrecto" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#toIniciarPeriodo"
+  NAME="action17" PATH="/toIniciarPeriodo" SHAPE="656,353,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="correcto"
+   NAME="forward0" PATH="/paginasAdministrador/iniciarPeriodo.jsp"
+   TARGET="page15" TITLE="correcto" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page18"
+  PATH="/paginasAdministrador/tipoPruebaList.jsp" SHAPE="864,577,0,0"
+  SUBTYPE="jsp" TITLE="tipoPruebaList.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page20"
+  PATH="/paginasAdministrador/tipoPruebaPage.jsp" SHAPE="864,353,0,0"
+  SUBTYPE="jsp" TITLE="tipoPruebaPage.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#toConsulta"
+  NAME="action15" PATH="/toConsulta" SHAPE="32,3969,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="correcto"
+   NAME="forward0" PATH="/paginas/consultar.jsp" TARGET="page16"
+   TITLE="correcto" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page16"
+  PATH="/paginas/consultar.jsp" SHAPE="256,4098,0,0" SUBTYPE="jsp"
+  TITLE="consultar.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#toTerminarPeriodo"
+  NAME="action23" PATH="/toTerminarPeriodo" SHAPE="32,4193,0,0"
+  TITLE="terminarPeriodoForm" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="correcto"
+   NAME="forward0" PATH="/paginasAdministrador/terminarPeriodo.jsp"
+   TARGET="page23" TITLE="correcto" TYPE="forward"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="fin"
+   NAME="forward1" PATH="/paginas/home.jsp" TARGET="page26" TITLE="fin" TYPE="forward"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="previofin"
+   NAME="forward2" PATH="/paginasAdministrador/verificacion.jsp"
+   TARGET="page30" TITLE="previofin" TYPE="forward"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="cancel"
+   NAME="forward3" PATH="/paginasAdministrador/terminarPeriodo.jsp"
+   TARGET="page23" TITLE="cancel" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page23"
+  PATH="/paginasAdministrador/terminarPeriodo.jsp" SHAPE="256,4210,0,0"
+  SUBTYPE="jsp" TITLE="terminarPeriodo.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#promedio" NAME="action24"
+  PATH="/promedio" SHAPE="32,4305,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="correcto"
+   NAME="forward0" PATH="/paginas/home.jsp" TARGET="page26"
+   TITLE="correcto" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#consultar"
+  NAME="action25" PATH="/consultar" SHAPE="32,4081,0,0"
+  TITLE="consultaForm" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="correcto"
+   NAME="forward0" PATH="/paginas/consultar.jsp" TARGET="page16"
+   TITLE="correcto" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page25"
+  PATH="/paginasAdministrador/parametrosCurso.jsp" SHAPE="288,2257,0,0"
+  SUBTYPE="jsp" TITLE="parametrosCurso.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page28"
+  PATH="/paginasAdministrador/tipoPruebaCurso.jsp" SHAPE="240,3185,0,0"
+  SUBTYPE="jsp" TITLE="tipoPruebaCurso.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page26"
+  PATH="/paginas/home.jsp" SHAPE="240,577,0,0" SUBTYPE="jsp"
+  TITLE="home.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page27"
+  PATH="/paginasAdministrador/listadoCursoParametros.jsp"
+  SHAPE="240,2481,0,0" SUBTYPE="jsp" TITLE="listadoCursoParametros.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page8"
+  PATH="/paginasAdministrador/confirmarDefinirParam.jsp"
+  SHAPE="288,2369,0,0" SUBTYPE="jsp" TITLE="confirmarDefinirParam.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#treeview" NAME="action22"
+  PATH="/treeview" SHAPE="32,5377,0,0" TYPE="action"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#page" NAME="action26"
+  PATH="/page" SHAPE="240,5393,0,0" TYPE="action"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#sort" NAME="action27"
+  PATH="/sort" SHAPE="448,5377,0,0" TYPE="action"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#toHome" NAME="action28"
+  PATH="/toHome" SHAPE="64,1233,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="toHome"
+   NAME="forward0" PATH="/paginas/home.jsp" TARGET="page26"
+   TITLE="toHome" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#tipoPruebaAction"
+  NAME="action29" PATH="/tipoPruebaAction" SHAPE="1072,577,0,0"
+  TITLE="tipoPruebaForm" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="list"
+   NAME="forward0" PATH="/paginasAdministrador/tipoPruebaList.jsp"
+   TARGET="page18" TITLE="list" TYPE="forward"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="add"
+   NAME="forward1" PATH="/paginasAdministrador/tipoPruebaPage.jsp"
+   TARGET="page20" TITLE="add" TYPE="forward"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="ok"
+   NAME="forward2" PATH="/paginas/home.jsp" TARGET="page26" TITLE="ok" TYPE="forward"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="edit"
+   NAME="forward3" PATH="/paginasAdministrador/tipoPruebaPage.jsp"
+   TARGET="page20" TITLE="edit" TYPE="forward"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput"
+   ID="finalizarAdmin" NAME="forward4"
+   PATH="/paginasAdministrador/confirmAdminPruebas.jsp" TARGET="page31"
+   TITLE="finalizarAdmin" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page15"
+  PATH="/paginasAdministrador/iniciarPeriodo.jsp" SHAPE="1072,353,0,0"
+  SUBTYPE="jsp" TITLE="iniciarPeriodo.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#toRegAdmin"
+  NAME="action30" PATH="/toRegAdmin" SHAPE="32,1345,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="toRegAdmin"
+   NAME="forward0" PATH="/paginasAdministrador/NuevoAdministrador.jsp"
+   TARGET="page0" TITLE="toRegAdmin" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem"
+  ID="java.lang.RuntimeException" NAME="exception0"
+  PATH="/paginas/baderror.jsp" SHAPE="32,5057,0,0" TARGET="page2"
+  TITLE="RuntimeException" TYPE="exception"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem"
+  ID="ccuni.java.sysNotas.dao.TransactionException" NAME="exception1"
+  PATH="/paginas/error.jsp" SHAPE="32,5313,0,0" TARGET="page19"
+  TITLE="TransactionException" TYPE="exception"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#toActualizarNotas"
+  NAME="action31" PATH="/toActualizarNotas" SHAPE="32,5425,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="correcto"
+   NAME="forward0"
+   PATH="/paginasAdministrador/ResultadoSincronizarNotas.jsp"
+   TARGET="page35" TITLE="correcto" TYPE="forward"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="inicio"
+   NAME="forward1" PATH="/paginasAdministrador/SincronizarNotas.jsp"
+   TARGET="page36" TITLE="inicio" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page2"
+  PATH="/paginas/baderror.jsp" SHAPE="240,5218,0,0" SUBTYPE="jsp"
+  TITLE="baderror.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page19"
+  PATH="/paginas/error.jsp" SHAPE="240,5330,0,0" SUBTYPE="jsp"
+  TITLE="error.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page31"
+  PATH="/paginasAdministrador/confirmAdminPruebas.jsp"
+  SHAPE="1488,577,0,0" SUBTYPE="jsp" TITLE="confirmAdminPruebas.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#toCambiarPassword"
+  NAME="action32" PATH="/toCambiarPassword" SHAPE="336,1601,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="correcto"
+   NAME="forward0" PATH="/paginas/cambiarPassword.jsp" TARGET="page22"
+   TITLE="correcto" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page30"
+  PATH="/paginasAdministrador/verificacion.jsp" SHAPE="240,4305,0,0"
+  SUBTYPE="jsp" TITLE="verificacion.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page17"
+  PATH="/paginas/confirmarDefinirParam.jsp" SHAPE="496,2257,0,0"
+  SUBTYPE="jsp" TITLE="confirmarDefinirParam.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem"
+  ID="#listaCursosParametrosDocente" NAME="action33"
+  PATH="/listaCursosParametrosDocente" SHAPE="64,3345,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/paginas/listadoCursosParametrosDocente.jsp"
+   TARGET="page33" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page33"
+  PATH="/paginas/listadoCursosParametrosDocente.jsp"
+  SHAPE="480,3345,0,0" SUBTYPE="jsp"
+  TITLE="listadoCursosParametrosDocente.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#registrarCursos"
+  NAME="action34" PATH="/registrarCursos" SHAPE="48,3377,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput"
+   ID="listadoCursosNoRegistrados" NAME="forward0"
+   PATH="/paginasAdministrador/listadoCursosNoRegistrados.jsp"
+   TARGET="page32" TITLE="listadoCursosNoRegistrados" TYPE="forward"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput"
+   ID="administrarCursos" NAME="forward1"
+   PATH="/listaCursosParametros.do" TARGET="action11"
+   TITLE="administrarCursos" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page32"
+  PATH="/paginasAdministrador/listadoCursosNoRegistrados.jsp"
+  SHAPE="256,3377,0,0" SUBTYPE="jsp"
+  TITLE="listadoCursosNoRegistrados.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="home" NAME="forward0"
+  PATH="/toHome.do" SHAPE="48,1377,0,0" TARGET="action28" TITLE="home" TYPE="forward"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page34"
+  PATH="/paginas/listadoNotasPrinter.jsp" SHAPE="496,1009,0,0"
+  SUBTYPE="jsp" TITLE="listadoNotasPrinter.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page35"
+  PATH="/paginasAdministrador/ResultadoSincronizarNotas.jsp"
+  SHAPE="240,5537,0,0" SUBTYPE="jsp"
+  TITLE="ResultadoSincronizarNotas.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page36"
+  PATH="/paginasAdministrador/SincronizarNotas.jsp" SHAPE="240,5649,0,0"
+  SUBTYPE="jsp" TITLE="SincronizarNotas.jsp" TYPE="page"/>
+</PROCESS>

@@ -1,0 +1,121 @@
+/*para todos los links*/
+#header a:link {
+	color: #FF0000
+}
+
+#header a:visited {
+	color: blue
+}
+
+#header a:hover {
+	font-size: 100%
+}
+
+body {
+	margin: 0; /* without margins the page would be stuck to the sides*/
+	font-family: verdana, arial, sans-serif;
+	/* base font is defined in the page */
+	font-size: 11px; /* size font is defined in the page */
+}
+
+#navcontainer {
+	visibility: hidden;
+	display: none;
+}
+
+#center {
+	/* the center block is placed according to the container block's width */
+	width: 100%;
+	margin-left: 0px;
+	margin-right: 0px;
+	background-color: white;
+	border-bottom: 2px solid white;
+}
+
+
+h2 {
+	font:  Arial, Helvetica, sans-serif;
+	text-align: left;
+	text-indent: 10px;
+	height: 20px;
+	color: black;
+}
+
+ul,li {
+	list-style-type: none; /* to minimize problems */
+	margin: 0;
+	padding: 0;
+	line-height: 30px; /* extra space */
+}
+
+table {
+	margin-top: 0px;
+	margin-right:15px;
+	border-collapse: collapse;
+	border: 1px solid black;
+	table-layout: auto;
+}
+
+thead th {
+	background: white;
+	height: 27px;
+	font-size: 14px;
+	color: black;
+	padding: 0px 0px;
+	text-align: center;
+	border: 1px solid black;
+	width: 600px;
+}
+
+tbody td {
+	text-align: left;
+}
+
+tbody td,tr {
+	font-size: 13px;
+	line-height: 1.5em;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #777777;
+	border: 1px solid black;
+}
+
+#footer {
+	visibility: hidden;
+	display: none;
+}
+
+#header {
+	visibility: hidden;
+	display: none;
+}
+
+input.btn {
+	visibility: hidden;
+	display: none;
+}
+
+input.button {
+	visibility: hidden;
+	display: none;
+}
+
+#centrado {
+	margin-right: 200px;
+	width: 600px;
+}
+input.fieldText{
+	border: 0px;
+	color: black;
+	background-color: white;
+	
+}
+
+p {
+	visibility: hidden;
+	display: none;
+}
+
+a {
+	visibility: hidden;
+	display: none;
+}

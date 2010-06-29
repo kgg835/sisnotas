@@ -1,0 +1,217 @@
+/*para todos los links*/
+#header a:link {
+	color: #FF0000
+}
+
+#header a:visited {
+	color: blue
+}
+
+#header a:hover {
+	font-size: 100%
+}
+
+
+
+body {
+margin: 0;/* without margins the page would be stuck to the sides*/
+font-family: verdana, arial, sans-serif; /* base font is defined in the page */
+font-size: 12px; /* size font is defined in the page */
+
+}
+#navcontainer
+{
+position: absolute;/*  truco */
+left:0; 
+width: 180px;
+border-right: 8px solid #000;
+padding: 0 0 1em 0;
+margin-bottom: 1em;
+font-family: Verdana, Lucida, Geneva, Helvetica, Arial, sans-serif;
+background-color:#90bade;
+color:#333;
+}
+
+#navcontainer ul
+{
+list-style: none;
+margin: 0;
+padding: 0;
+border: none;
+}
+
+#navcontainer li
+{
+border-bottom: 1px solid #90bade;
+margin: 0;
+}
+
+#navcontainer li a
+{
+display: block;
+padding: 1px 1px 1px 0.5em;
+border-left: 10px solid #1958b7;
+border-right: 10px solid #508fc4;
+background-color: #2175bc;
+color: #fff;/*color de letra*/
+text-decoration: none;
+width: 100%;
+font-size: 11px;
+font-family: cursive;
+
+}
+
+html>body #navcontainer li a { width: auto; }
+
+#navcontainer li a:hover
+{
+border-left: 10px solid #1c64d1;
+border-right: 10px solid #5ba3e0;
+background-color: #2586d7;
+color: #fff;
+}
+
+
+#center {
+margin-left: 180px; /* the center block is placed according to the container block's width */
+width: 80%;
+background-color: #B7D3F0;
+border-bottom: 2px solid #FFCA5E;
+}
+
+#listas{
+background: #8DB4C2;
+font-family: verdana, arial;
+}
+
+h1 {
+font-size: 140%;
+text-align: right;
+}
+
+h2 {
+	font: 1.8em/ 1.8em Arial, Helvetica, sans-serif;
+	text-align: center;
+	text-indent: 10px;
+	height: 30px;
+	color: #005e21;
+	font-weight: bold;
+}
+ul,li {
+list-style-type: none; /* to minimize problems */
+margin: 0;
+padding:0;
+line-height: 30px; /* extra space */
+}
+.formStruts{
+margin-top:20px;
+margin-left:20px;
+font-size: 10px;
+font-family: Verdana, Lucida, Geneva, Helvetica, Arial, sans-serif;
+
+font-style: italic;
+background-color: white;
+color:purple;
+border: 1px solid blue;
+table-layout: automatic;
+border-collapse: collapse;
+text-align: center;
+
+
+}
+TH.formStruts{
+background-color: blue;
+color:white;	
+}
+#footer{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color:green;
+	width:600px;
+	margin-left:200px;
+	
+	text-align:center;
+	
+}
+#header{
+    
+	font-family: Arial, Helvetica, sans-serif;	
+	color:red;
+	width:100%;	
+	border-top: 2px solid #FFCA5E;	
+	background:url(../imagenes/marble.jpg);
+	height:89px;
+	border-bottom: 2px solid #FFCA5E;
+	
+}
+#header span{
+display: block;
+text-align:right;
+}
+#logo1{
+   position: absolute;
+}
+#logof{
+   margin-top: 0;
+	text-align: right;
+	font-family: helvetica, tahoma, arial, verdana, sans-serif;
+	font-size: 25px;
+}
+#logof a{
+	margin-top: 0;
+	text-align: right;
+	font-family: helvetica, tahoma, arial, verdana, sans-serif;
+	font-size: 16px;
+	
+}
+
+.info {
+	font-weight: normal;
+	margin: 1em;
+	text-align: center;
+}
+
+.info_bold {
+	font-weight:bold;
+	margin: 1em;
+	text-align: center;
+}
+
+
+.confirm {
+	margin: 1em;
+	font-family: helvetica, tahoma, arial, verdana, sans-serif;
+	font-size: 2ex;
+	text-align: center;
+	text-indent: 10px;
+	height: 30px;
+}
+
+#centrado{
+margin-left: 180px;
+
+}
+input.btn {
+	margin: 1em;
+	padding: .3ex;
+	color: #fff;
+	background-color: #005e21;
+	font-family: helvetica, tahoma, arial, verdana, sans-serif;
+	font-size: 1.5ex;
+	border-width: 0;
+}
+
+input.btnlink{
+	color:blue;
+	background-color: #fff;
+	font-family: helvetica, tahoma, arial, verdana, sans-serif;
+	font-size: 1.5ex;
+	border-width: 0;
+}
+input.button {
+	color: #fff;
+	background-color: #005e21;
+	font-family: helvetica, tahoma, arial, verdana, sans-serif;
+	font-size: 11px;
+	border-width: 0;
+}
