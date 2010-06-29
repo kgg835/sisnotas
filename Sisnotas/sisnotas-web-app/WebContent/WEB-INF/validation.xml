@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE form-validation PUBLIC
+          "-//Apache Software Foundation//DTD Commons Validator Rules Configuration 1.1.3//EN"
+          "http://jakarta.apache.org/commons/dtds/validator_1_1_3.dtd">
+<form-validation>
+	<formset>
+		<form name="loginForm">
+			<field property="usuario" depends="required">
+				<arg0 key="error.usuario.required" />
+			</field>
+
+			<field property="password" depends="required,minlength">
+				<arg0 key="error.password.required" />
+				<arg1 key="${var:minlength}" name="minlength"
+					resource="false" />
+				<var>
+					<var-name>minlength</var-name>
+					<var-value>6</var-value>
+				</var>
+			</field>
+
+			<field property="password" depends="maxlength">
+				<arg0 key="error.password.required" />
+				<arg1 key="${var:maxlength}" name="maxlength"
+					resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>25</var-value>
+				</var>
+			</field>
+		</form>
+		
+		<form name="consultaForm">
+		<field property="codCur" depends="required">
+				<arg0 key="error.codCur.required" />
+		</field>
+		<field property="seccion" depends="required">
+				<arg0 key="error.seccion.required" />
+		</field>
+		
+		<field property="seccion" depends="maxlength">
+				<arg0 key="error.seccion.required" />
+				<arg1 key="${var:maxlength}" name="maxlength"
+					resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>1</var-value>
+				</var>
+			</field>
+			<field property="ciclo" depends="required">
+				<arg0 key="error.ciclo.required" />
+		</field>
+		</form>
+		
+		<form name="iniciarPeriodoForm">
+		<field property="perAcad" depends="required">
+		<arg0 key="error.perAcad.required" />
+		</field>
+		</form>
+
+		<form name="cambiarContraseniaForm">
+			<field property="password" depends="required,minlength">
+				<arg0 key="error.password.required" />
+				<arg1 key="${var:minlength}" name="minlength"
+					resource="false" />
+				<var>
+					<var-name>minlength</var-name>
+					<var-value>6</var-value>
+				</var>
+			</field>
+
+			<field property="password" depends="maxlength">
+				<arg0 key="error.password.required" />
+				<arg1 key="${var:maxlength}" name="maxlength"
+					resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>25</var-value>
+				</var>
+			</field>
+
+			<field property="newpassword"
+				depends="required,minlength">
+				<arg0 key="error.newpassword.required" />
+				<arg1 key="${var:minlength}" name="minlength"
+					resource="false" />
+				<var>
+					<var-name>minlength</var-name>
+					<var-value>6</var-value>
+				</var>
+			</field>
+
+			<field property="newpassword" depends="maxlength">
+				<arg0 key="error.newpassword.required" />
+				<arg1 key="${var:maxlength}" name="maxlength"
+					resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>25</var-value>
+				</var>
+			</field>
+
+			<field property="newpassword2"
+				depends="required,minlength">
+				<arg0 key="error.newpassword.required" />
+				<arg1 key="${var:minlength}" name="minlength"
+					resource="false" />
+				<var>
+					<var-name>minlength</var-name>
+					<var-value>6</var-value>
+				</var>
+			</field>
+
+			<field property="newpassword2" depends="maxlength">
+				<arg0 key="error.newpassword.required" />
+				<arg1 key="${var:maxlength}" name="maxlength"
+					resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>25</var-value>
+				</var>
+			</field>
+		</form>
+
+		<form name="loginForm">
+			<field property="usuario" depends="required">
+				<arg0 key="error.usuario.required" />
+			</field>
+
+			<field property="password" depends="required,minlength">
+				<arg0 key="error.password.required" />
+				<arg1 key="${var:minlength}" name="minlength"
+					resource="false" />
+				<var>
+					<var-name>minlength</var-name>
+					<var-value>6</var-value>
+				</var>
+			</field>
+
+			<field property="password" depends="maxlength">
+				<arg0 key="error.password.required" />
+				<arg1 key="${var:maxlength}" name="maxlength"
+					resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>25</var-value>
+				</var>
+			</field>
+		</form>
+
+		<form name="evaluacionesForm">
+			<field property="check1" depends="required">
+				<arg0 key="error.check1.required" />
+			</field>
+			<field property="check2" depends="required">
+				<arg0 key="error.check2.required" />
+			</field>
+
+		</form>
+
+		<form name="pruebasForm">
+			<field property="peso" depends="required">
+				<arg0 key="error.pruebas.peso" />
+				<arg1 name="intRange" key="${var:min}" resource="false" />
+				<var>
+					<var-name>min</var-name>
+					<var-value>1</var-value>
+				</var>
+			</field>
+		</form>
+
+		<form name="tipoPruebaForm">
+			<field property="tipoprueba" depends="required">
+				<arg0 key="addprueba.tipoprueba" />
+			</field>
+			<field property="numeropruebas"
+				depends="required,integer,intRange">
+				<msg name="minRange" key="error.minRange" />
+				<arg0 key="addprueba.numero" />
+				<arg1 name="intRange" key="${var:min}" resource="false" />
+				<arg2 name="intRange" key="${var:max}" resource="false" />
+				<var>
+					<var-name>min</var-name>
+					<var-value>1</var-value>
+				</var>
+				<var>
+					<var-name>max</var-name>
+					<var-value>99</var-value>
+				</var>
+			</field>
+
+			<field property="eliminados"
+				depends="required,integer,intRange,validwhen">
+				<msg name="minRange" key="error.minRange" />
+				<arg0 key="addprueba.eliminados" />
+				<arg1 name="intRange" key="${var:min}" resource="false" />
+				<arg2 name="intRange" key="${var:max}" resource="false" />
+				<var>
+					<var-name>min</var-name>
+					<var-value>0</var-value>
+				</var>
+				<var>
+					<var-name>max</var-name>
+					<var-value>99</var-value>
+				</var>
+				<var>
+					<var-name>test</var-name>
+					<var-value>(*this* &lt; numeropruebas)</var-value>
+				</var>
+			</field>
+
+			<field property="pesoprueba"
+				depends="required,integer,intRange">
+				<msg name="minRange" key="error.minRange" />
+				<arg0 key="addprueba.peso" />
+				<arg1 name="intRange" key="${var:min}" resource="false" />
+				<arg2 name="intRange" key="${var:max}" resource="false" />
+				<var>
+					<var-name>min</var-name>
+					<var-value>1</var-value>
+				</var>
+				<var>
+					<var-name>max</var-name>
+					<var-value>99</var-value>
+				</var>
+			</field>
+		</form>
+
+		<form name="listadoForm">
+			<field property="docentes" depends="required">
+				<arg0 key="error.listaDocentes" />
+			</field>
+		</form>
+
+		<form name="cursoDocenteForm">
+			<field property="docentes" depends="required">
+				<arg0 key="error.pruebas.peso" />
+			</field>
+		</form>
+
+		<form name="usuarioForm">
+			<field property="password" depends="required">
+				<arg0 key="error.pruebas.peso" />
+			</field>
+			<field property="password2" depends="required">
+				<arg0 key="error.pruebas.peso" />
+			</field>
+		</form>
+	</formset>
+</form-validation>

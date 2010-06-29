@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+<!-- This is the Struts configuration file for the Login example application -->
+
+
+<struts-config>
+	<!-- ========== Data Source Definitions ================================ -->
+	<data-sources>
+		<data-source key="sisNotas"
+			type="org.apache.commons.dbcp.BasicDataSource">
+			<set-property property="driverClassName"
+				value="com.mysql.jdbc.Driver" />
+			<set-property property="username" value="root" />
+			<set-property property="password" value="admin" />
+			<set-property property="url"
+				value="jdbc:mysql://127.0.0.1:3306/sisnotas" />
+		</data-source>
+	</data-sources>
+	<form-beans>
+		<form-bean name="loginForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="usuario" type="java.lang.String"
+				initial="" />
+			<form-property name="password" type="java.lang.String"
+				initial="" />
+		</form-bean>
+
+		<form-bean name="consultaForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="codCur" type="java.lang.String"
+				initial="" />
+			<form-property name="seccion" type="java.lang.String"
+				initial="" />
+			<form-property name="ciclo" type="java.lang.String"
+				initial="" />
+		</form-bean>
+
+		<form-bean name="iniciarPeriodoForm"
+			type="org.apache.struts.action.DynaActionForm">
+			<form-property name="newPerAcad" type="java.lang.String"
+				initial="" />
+			<form-property name="nombrePerAcad" type="java.lang.String"
+				initial="" />
+		</form-bean>
+
+		<form-bean name="menuForm"
+			type="org.apache.struts.action.DynaActionForm">
+			<form-property name="action" type="java.lang.String" />
+		</form-bean>
+
+
+		<form-bean name="cambiarContraseniaForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="password" type="java.lang.String"
+				initial="" />
+			<form-property name="newpassword" type="java.lang.String"
+				initial="" />
+			<form-property name="newpassword2" type="java.lang.String"
+				initial="" />
+		</form-bean>
+
+		<form-bean name="estadoForm"
+			type="org.apache.struts.action.DynaActionForm">
+			<form-property name="accion" type="java.lang.String" />
+			<form-property name="cursoId" type="java.lang.String" />
+			<form-property name="seccion" type="java.lang.String" />
+			<form-property name="perAcad" type="java.lang.String" />
+			<form-property name="nombreCurso" type="java.lang.String" />
+			<form-property name="tipo" type="java.lang.String" />
+			<form-property name="num" type="java.lang.String" />
+			<form-property name="estado" type="java.lang.String" />
+			<form-property name="auxEstado" type="java.lang.String" /><!-- guarda el antiguo estado -->
+			<form-property name="estados" type="java.util.ArrayList" />
+
+		</form-bean>
+
+		<form-bean name="notaForm"
+			type="org.apache.struts.action.DynaActionForm">
+
+			<form-property name="accionId" type="java.lang.String" />
+			<form-property name="accion" type="java.lang.String" />
+			<form-property name="descripcion" type="java.lang.String" />
+			<form-property name="cursoId" type="java.lang.String" />
+			<form-property name="seccion" type="java.lang.String" />
+			<form-property name="perAcad" type="java.lang.String" />
+			<form-property name="nombreCurso" type="java.lang.String" />
+			<form-property name="tipo" type="java.lang.String" />
+			<form-property name="num" type="java.lang.String" />
+			<form-property name="codigos" type="java.lang.String[]" />
+			<form-property name="nombres" type="java.lang.String[]" />
+			<form-property name="notas" type="java.lang.String[]" />
+			<form-property name="notasRec" type="java.lang.String[]" />
+
+		</form-bean>
+		<!--  LUIS -->
+		<form-bean name="administradorForm"
+			type="ccuni.java.sysNotas.actionForm.AdministradorForm" />
+
+		<form-bean name="listadoForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="docentes" type="java.lang.String" />
+		</form-bean>
+		
+		<form-bean name="listadoCursosForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="cursos" type="java.lang.String" />
+		</form-bean>
+
+		<form-bean name="cursoDocenteForm"
+			type="org.apache.struts.action.DynaActionForm">
+			<form-property name="cmbdocentes" type="java.lang.String" />
+		</form-bean>
+
+		<form-bean name="tipoPruebaForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="tipoprueba" type="java.lang.String" />
+			<form-property name="tiposDePrueba"
+				type="java.util.ArrayList" />
+			<form-property name="numeropruebas"
+				type="java.lang.Integer" />
+			<form-property name="eliminados" type="java.lang.Integer" />
+			<form-property name="pesoprueba" type="java.lang.Integer" />
+		</form-bean>
+
+		<form-bean name="menuForm"
+			type="org.apache.struts.action.DynaActionForm">
+			<form-property name="action" type="java.lang.String" />
+		</form-bean>
+		<form-bean name="terminarPeriodoForm"
+			type="org.apache.struts.action.DynaActionForm">
+			<form-property name="accion" type="java.lang.String" />
+			<form-property name="detalle" type="java.lang.String" />
+		</form-bean>
+
+		<form-bean name="usuarioForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="password" type="java.lang.String" />
+			<form-property name="password2" type="java.lang.String" />
+			<form-property name="editarpass" type="java.lang.Boolean" />
+		</form-bean>
+	</form-beans>
+	<!--  LUIS -->
+
+	<!-- ========== Global Exception Definitions ============================== -->
+	<!-- key value will be taken from the ModuleException instance -->
+	<global-exceptions>
+		<exception bundle="ApplicationResources" key="error.db.sql"
+			path="/paginas/error.jsp"
+			handler="ccuni.java.sysNotas.logic.CustomExceptionHandler"
+			type="ccuni.java.sysNotas.dao.TransactionException" />
+		<exception bundle="ApplicationResources"
+			key="error.RuntimeException" path="/paginas/baderror.jsp"
+			handler="ccuni.java.sysNotas.logic.CustomExceptionHandler"
+			type="java.lang.RuntimeException" />
+	</global-exceptions>
+
+
+	<global-forwards>
+		<forward name="home" path="/toHome.do" />
+	</global-forwards>
+	
+	<action-mappings>
+		<action path="/sort"
+			type="fr.improve.struts.taglib.layout.sort.SortAction"
+			scope="request" validate="false" />
+		<action path="/page"
+			type="fr.improve.struts.taglib.layout.sort.PageAction"
+			scope="request" validate="false" />
+		<action path="/treeview"
+			type="fr.improve.struts.taglib.layout.treeview.TreeviewAction"
+			scope="request" validate="false" />
+
+		<!--  LUIS -->
+		<action path="/toMenu"
+			type="ccuni.java.sysNotas.action.MenuAction">
+			<forward name="correcto" path="/paginas/home.jsp" />
+		</action>
+		<action path="/toRegAdmin"
+			type="ccuni.java.sysNotas.action.ToRegAdmin">
+			<forward name="toRegAdmin"
+				path="/paginasAdministrador/NuevoAdministrador.jsp" />
+		</action>
+		<action path="/toHome"
+			type="ccuni.java.sysNotas.action.ToHomeAction">
+			<forward name="toHome" path="/paginas/home.jsp" />
+		</action>
+		<action path="/toLogin"
+			type="ccuni.java.sysNotas.action.toLoginAction">
+			<forward name="correcto" path="/paginas/login.jsp" />
+		</action>
+
+		<action path="/toConsulta"
+			type="ccuni.java.sysNotas.action.toConsultaAction">
+			<forward name="correcto" path="/paginas/consultar.jsp" />
+		</action>
+
+		<action path="/toIniciarPeriodo"
+			type="ccuni.java.sysNotas.action.ToIniciarPeriodoAction">
+			<forward name="correcto"
+				path="/paginasAdministrador/iniciarPeriodo.jsp" />
+		</action>
+
+		<action path="/toActualizarNotas"
+			type="ccuni.java.sysNotas.action.toActualizarNotasAction">
+			<forward name="inicio"
+				path="/paginasAdministrador/SincronizarNotas.jsp" />
+			<forward name="correcto"
+				path="/paginasAdministrador/ResultadoSincronizarNotas.jsp" />				
+		</action>
+
+		<action path="/iniciarPeriodo"
+			type="ccuni.java.sysNotas.action.IniciarPeriodoAction"
+			name="iniciarPeriodoForm" scope="request"
+			input="/paginasAdministrador/iniciarPeriodo.jsp" validate="false">
+			<forward name="correcto" path="/paginas/home.jsp" />
+			<forward name="incorrecto"
+				path="/paginasAdministrador/iniciarPeriodo.jsp" />
+		</action>
+
+		<action path="/toCambiarPassword"
+			type="ccuni.java.sysNotas.action.toCambiarPasswordAction">
+			<forward name="correcto"
+				path="/paginas/cambiarPassword.jsp" />
+		</action>
+
+		<action path="/cambiarContrasenia"
+			type="ccuni.java.sysNotas.action.cambiarContraseniaAction"
+			name="cambiarContraseniaForm" scope="request"
+			input="/paginas/cambiarPassword.jsp" validate="true">
+			<forward name="correcto" path="/paginas/home.jsp" />
+			<forward name="incorrecto"
+				path="/paginas/cambiarPassword.jsp" />
+
+		</action>
+
+
+		<action path="/toTerminarPeriodo" name="terminarPeriodoForm"
+			input="/paginasAdministrador/terminarPeriodo.jsp"
+			type="ccuni.java.sysNotas.action.toTerminarPeriodoAction">
+
+			<forward name="correcto"
+				path="/paginasAdministrador/terminarPeriodo.jsp" />
+			<forward name="previofin"
+				path="/paginasAdministrador/verificacion.jsp" />
+			<forward name="fin" path="/paginas/home.jsp" />
+			<forward name="cancel"
+				path="/paginasAdministrador/terminarPeriodo.jsp" />
+		</action>
+
+		<action path="/promedio" scope="request"
+			type="ccuni.java.sysNotas.action.PromedioAction">
+			<forward name="correcto" path="/paginas/home.jsp" />
+		</action>
+
+		<action path="/consultar" name="consultaForm" scope="request"
+			type="ccuni.java.sysNotas.action.ConsultarAction"
+			input="/paginas/consultar.jsp" validate="false">
+			<forward name="correcto" path="/paginas/consultar.jsp" />
+
+		</action>
+		<action path="/registroAdmin" name="administradorForm"
+			scope="request"
+			type="ccuni.java.sysNotas.action.CrearAdministradorAction"
+			input="/paginasAdministrador/NuevoAdministrador.jsp"
+			validate="true">
+			<forward name="success"
+				path="/paginasAdministrador/reporteRegistroAdmin.jsp" />
+			<forward name="fallo"
+				path="/paginasAdministrador/NuevoAdministrador.jsp" />
+		</action>
+
+		<action path="/registrarDocentes" scope="request"
+			type="ccuni.java.sysNotas.action.RegistroDocentesAction"
+			validate="false">
+			<forward name="migrar"
+				path="/paginasAdministrador/confirmarMigracion.jsp" />
+			<forward name="registrar"
+				path="/listarDocentesNoRegistrados.do" />
+		</action>
+
+
+		<action path="/listarDocentes" scope="request"
+			type="ccuni.java.sysNotas.action.ListarDocentesAction"
+			validate="false">
+			<forward name="aceptar"
+				path="/paginasAdministrador/ListadoDocentes.jsp" />
+			<forward name="cancelar" path="/paginas/home.jsp" />
+		</action>
+
+		<action path="/listarDocentesNoRegistrados" scope="request"
+			type="ccuni.java.sysNotas.action.ListarDocentesNoRegistradosAction"
+			validate="false">
+			<forward name="success"
+				path="/paginasAdministrador/ListadoDocentes.jsp" />
+		</action>
+
+		<action path="/migrarDocentes" scope="request"
+			name="listadoForm" input="/paginasAdministrador/ListadoDocentes.jsp"
+			type="ccuni.java.sysNotas.action.MigrarDocentesAction"
+			validate="true">
+			<forward name="registrar"
+				path="/paginasAdministrador/ReporteDocentesRegistrados.jsp" />
+			<forward name="cancelar" path="/paginas/home.jsp" />
+		</action>
+
+		<action path="/consultaUsuarios" scope="request"
+			type="ccuni.java.sysNotas.action.ConsultarUsuariosAction"
+			validate="false">
+			<forward name="success"
+				path="/paginasAdministrador/consultaUsuarios.jsp" />
+		</action>
+
+		<action path="/usuarioAction" scope="request" name="usuarioForm"
+			type="ccuni.java.sysNotas.action.UsuarioAction" validate="false">
+			<forward name="verUsuario"
+				path="/paginasAdministrador/userPage.jsp" />
+			<forward name="update" path="/consultaUsuarios.do" />
+			<forward name="cancel" path="/consultaUsuarios.do" />
+		</action>
+
+		<action path="/parametrosAction" scope="request"
+			name="cursoDocenteForm"
+			type="ccuni.java.sysNotas.action.ParametrosCursoAction"
+			validate="true">
+			<forward name="verParametros"
+				path="/paginasAdministrador/parametrosCurso.jsp" />
+			<forward name="addPrueba" path="/tipoPruebaCursoAction.do" />
+			<forward name="aceptarParam"
+				path="/listaCursosParametros.do" />
+			<forward name="aceptarDefParam" path="/paginas/home.jsp" />
+			<forward name="cancelDefParam"
+				path="/listaCursosParametros.do" />
+			<forward name="confirmDefParam"
+				path="/paginasAdministrador/confirmarDefinirParam.jsp" />
+			<forward name="toVerParametros"
+				path="/parametrosAction.do?action=verParametros" />
+			<forward name="editarDocente"
+				path="/paginasAdministrador/parametrosCurso.jsp" />
+			<forward name="confirmDefParamCurso"
+				path="/paginas/confirmarDefinirParam.jsp" />
+			<forward name="aceptarParamCurso"
+				path="/listaCursosParametrosDocente.do" />	
+			<forward name="deleteCurso" path="/listaCursosParametros.do"></forward>	
+		</action>
+		
+		<action path="/listaCursosParametrosDocente"
+			type="ccuni.java.sysNotas.action.ListaCursosParametrosxDocenteAction"
+			validate="false">
+			<forward name="success"
+				path="/paginas/listadoCursosParametrosDocente.jsp" />
+		</action>
+		
+
+		<action path="/tipoPruebaCursoAction" scope="request"
+			name="tipoPruebaForm"
+			input="/paginasAdministrador/tipoPruebaCurso.jsp"
+			type="ccuni.java.sysNotas.action.TipoPruebaCursoAction"
+			validate="false">
+			<forward name="addPrueba"
+				path="/paginasAdministrador/tipoPruebaCurso.jsp" />
+			<forward name="editarPrueba"
+				path="/paginasAdministrador/tipoPruebaCurso.jsp" />
+			<forward name="success"
+				path="/parametrosAction.do?action=verParametros" />
+		</action>
+
+		<action path="/tipoPruebaAction" scope="request"
+			name="tipoPruebaForm" input="/paginas/addTipoPrueba.jsp"
+			type="ccuni.java.sysNotas.action.TipoPruebaAction"
+			validate="false">
+			<forward name="list"
+				path="/paginasAdministrador/tipoPruebaList.jsp" />
+			<forward name="add"
+				path="/paginasAdministrador/tipoPruebaPage.jsp" />
+			<forward name="edit"
+				path="/paginasAdministrador/tipoPruebaPage.jsp" />
+			<forward name="ok" path="/paginas/home.jsp" />
+			<forward name="finalizarAdmin"
+				path="/paginasAdministrador/confirmAdminPruebas.jsp" />
+		</action>
+
+		<action path="/listaCursosParametros"
+			type="ccuni.java.sysNotas.action.ListaCursosParametrosAction"
+			validate="false">
+			<forward name="success"
+				path="/paginasAdministrador/listadoCursoParametros.jsp" />
+		</action>
+		
+		<action path="/registrarCursos"
+			type="ccuni.java.sysNotas.action.RegistrarCursosAction"
+			parameter="metodo">
+			<forward name="listadoCursosNoRegistrados"
+				path="/paginasAdministrador/listadoCursosNoRegistrados.jsp" />
+			<forward name="administrarCursos"
+				path="/listaCursosParametros.do"/>
+		</action>
+		
+
+		<!--  LUIS -->
+		<action path="/login"
+			type="ccuni.java.sysNotas.action.LoginAction" name="loginForm"
+			scope="request" input="/paginas/login.jsp" validate="true">
+			<forward name="loginFallado" path="/paginas/login.jsp" />
+			<forward name="loginCorrecto" path="/paginas/home.jsp" />
+		</action>
+
+		<action path="/logOff"
+			type="ccuni.java.sysNotas.action.LogoffAction" scope="request"
+			validate="false">
+			<forward name="correcto" path="/Welcome.jsp" />
+
+		</action>
+
+		<action path="/listaCursos"
+			type="ccuni.java.sysNotas.action.ListaCursosAction"
+			input="/home.jsp">
+			<forward name="success" path="/paginas/listadoCurso.jsp" />
+		</action>
+		<action path="/nota"
+			type="ccuni.java.sysNotas.action.NotaAction"
+			input="/listadoNotas.jsp" name="notaForm" validate="false">
+			<forward name="new" path="/paginas/listadoNotas.jsp" />
+			<forward name="print" path="/paginas/listadoNotasPrinter.jsp" />
+			<forward name="failed"
+				path="/paginas/listadoEvaluaciones.jsp" />
+			<forward name="cancel"
+				path="/listaEvaluaciones.do?accion2=listar" />
+			<forward name="success"
+				path="/listaEvaluaciones.do?accion2=listar" />
+		</action>
+
+		<action path="/listaEvaluaciones" name="estadoForm"
+			type="ccuni.java.sysNotas.action.ListaEvaluacionesAction"
+			input="/paginas/edicionEstado.jsp" validate="false">
+			<forward name="listar"
+				path="/paginas/listadoEvaluaciones.jsp" />
+			<forward name="editar" path="/paginas/edicionEstado.jsp" />
+			<forward name="failure"
+				path="/listaEvaluaciones.do?accion=view" />
+			<forward name="success"
+				path="/listaEvaluaciones.do?accion2=listar" />
+			<forward name="cancel"
+				path="/listaEvaluaciones.do?accion2=listar" />
+		</action>
+
+		<action path="/verificaEvaluacion"
+			type="ccuni.java.sysNotas.action.VerificaEvaluacionAction">
+			<forward name="default" path="/paginas/exampleresponse.jsp" />
+			<forward name="ERROR" path="/paginas/errroEvaluacion.jsp" />
+		</action>
+	</action-mappings>
+
+	<!-- ========== Controller Definition ============================== -->
+	<controller
+		processorClass="ccuni.java.sysNotas.logic.CustomRequestProcessor" />
+
+	<message-resources parameter="ApplicationResources" />
+	<!-- ========== Plugin Definitions =========================== -->
+	<plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+		<set-property property="pathnames"
+			value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml" />
+	</plug-in>
+	<plug-in className="ccuni.java.sysNotas.logic.StartupManager" />
+</struts-config>
+
+
